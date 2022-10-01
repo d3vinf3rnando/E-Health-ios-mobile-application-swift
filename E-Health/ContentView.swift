@@ -84,8 +84,7 @@ struct NewPage:View{
     var body:some View{
         
         ZStack{
-            
-            
+        
             Image("blur3")
                
                 .position(x:215, y:375)
@@ -186,22 +185,24 @@ struct NewPage:View{
 
                 }
             }
-            Image("doctor1")
-                .resizable()
-                .frame(width:250, height:250)
-                .position(x:180, y:400)
+            NavigationLink(destination:DoctorDetails()){
+                Image("doctor1")
+                    .resizable()
+                    .frame(width:250, height:250)
+                    .position(x:180, y:400)
+            }
             
             Image("doctor2")
                 .resizable()
                 .frame(width:80, height:140)
-                .position(x:390, y:420)
+                .position(x:390, y:460)
             
             VStack{
                 Text("Most popular")
                     .foregroundColor(SwiftUI.Color.black)
                     .font(.system(size: 22))
                     .fontWeight(SwiftUI.Font.Weight.semibold)
-                    .position(x:100, y:580)
+                    .position(x:100, y:590)
                 
                 //3 cards
                 
@@ -248,6 +249,7 @@ struct NewPage:View{
                             }
                         }
                         
+                        
                         ZStack{
                             RoundedRectangle(cornerRadius: 20, style: .continuous)
                                 .fill(Color.orange)
@@ -274,30 +276,196 @@ struct NewPage:View{
                 
             }
             HStack{
-                ForEach(0..<4, id:\.self){
-                    number in
-                    Spacer()
-                    Button(action:{
-                        
-                    }, label:{
-                        Image(systemName: icons[number])
-                            .font(.system(size:22))
+                HStack{
+                    ForEach(0..<4, id:\.self){
+                        number in
+                        Spacer()
+                        Button(action:{
                             
+                        }, label:{
+                            Image(systemName: icons[number])
+                                .font(.system(size:22))
+                                
 
-                    })
+                        })
+                    }
                 }
+                
+               
+                
             }
             .position(x:180,y:830)
                         
-            
-                
-                
-                
-            
-                
+         
             
             
         }
         .navigationBarBackButtonHidden(true)
+    }
+}
+
+
+//third screen (doctor's details)
+struct DoctorDetails:View{
+    @State private var alignment = TextAlignment.leading
+    var body:some View{
+        ZStack{
+            Image("blur3")
+               
+                .position(x:215, y:375)
+//            HStack{
+//                Image(systemName: "arrowshape.turn.up.backward.fill")
+//                Spacer() //less space  values
+//                Image(systemName:"paperplane.fill")
+//            }
+//            .foregroundColor(SwiftUI.Color.blue)
+//            .position(x:210,y:50)
+//
+            
+            HStack{
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color.mint)
+                               .frame(width: 127, height: 190)
+                               .position(x:100,y:140)
+                
+                Image("doctor3")
+                    .resizable()
+                    .frame(width:180,height:180)
+                    .position(x:-115, y:105)
+                
+                
+                
+            }
+            
+        }
+        
+        //texts
+        VStack{
+            Text("Dr. Eric San")
+                .position(x:270, y:-210)
+                .font(.system(size:22))
+                .fontWeight(SwiftUI.Font.Weight.semibold)
+        }
+        
+        ZStack{
+            VStack{
+                ZStack{
+                    Text("Specialist on Allergists")
+                        .font(.system(size:16))
+                        .fontWeight(SwiftUI.Font.Weight.regular)
+                        .foregroundColor(SwiftUI.Color.gray)
+                        .position(x:295, y:-450)
+                }
+            }
+            ZStack{
+                Image("cash")
+                    .resizable()
+                    .frame(width:30, height:30)
+                    .position(x:230,y:-387)
+            }
+            
+            ZStack{
+                Text("COST")
+                    .foregroundColor(SwiftUI.Color.gray)
+                    .position(x:280,y:-400)
+                    .font(.system(size:14))
+            }
+            
+            ZStack{
+               Text("$ 0.80/min")
+                    .position(x:297,y:-375)
+                    .font(.system(size:14))
+            }
+            
+            ZStack{
+                Image("smile")
+                    .resizable()
+                    .frame(width:30, height:30)
+                    .position(x:230,y:-330)
+            }
+            
+            ZStack{
+                Text("HAPPY")
+                    .foregroundColor(SwiftUI.Color.gray)
+                    .position(x:285,y:-340)
+                    .font(.system(size:14))
+            }
+            
+            ZStack{
+               Text("500+ ratings")
+                    .position(x:302,y:-315)
+                    .font(.system(size:14))
+            }
+            
+            //BIO SECTION
+            ZStack{
+                Text("Bio")
+                    .font(.system(size:22))
+                    .fontWeight(SwiftUI.Font.Weight.semibold)
+                    .position(x:50,y:-240)
+            }
+            
+            ZStack{
+                Text("MBBS (UK), MRCP(UK), Board Certified in Int. Medicine (U.S.A). The founder of Healthy Life Allergists Clinic.")
+                    .foregroundColor(SwiftUI.Color.gray)
+                    .padding(10)
+                    .offset(x: 0, y: -305)
+                    
+            }
+            
+            ZStack{
+                Text("Services")
+                    .font(.system(size:22))
+                    .fontWeight(SwiftUI.Font.Weight.semibold)
+                    .position(x:80,y:-90)
+                Spacer()
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.mint)
+                                   .frame(width: 127, height: 130)
+                                   .position(x:100,y:15)
+                }
+                
+                Spacer()
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.mint)
+                                   .frame(width: 127, height: 130)
+                                   .position(x:250,y:15)
+                }
+                
+                Spacer()
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.mint)
+                                   .frame(width: 127, height: 130)
+                                   .position(x:400,y:15)
+                }
+                
+            }
+            
+           
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+}
+
+
+
+
+struct Previews_ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        DoctorDetails()
     }
 }
