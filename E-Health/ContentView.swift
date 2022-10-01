@@ -422,27 +422,78 @@ struct DoctorDetails:View{
                 
                 ZStack{
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(Color.mint)
+                        .fill(Color.white)
                                    .frame(width: 127, height: 130)
                                    .position(x:100,y:15)
+                                   .shadow(color:.gray.opacity(0.2) ,radius: 20)
+                    
+                    Text("878+ \nPatients")
+                        .foregroundColor(SwiftUI.Color.blue)
+                        .font(.system(size:16))
+                        .fontWeight(SwiftUI.Font.Weight.semibold)
+                        .position(x:105,y:15)
+                        
+                        
                 }
                 
                 Spacer()
                 
                 ZStack{
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(Color.mint)
+                        .fill(Color.white)
                                    .frame(width: 127, height: 130)
                                    .position(x:250,y:15)
+                                   .shadow(color:.gray.opacity(0.2) ,radius: 20)
+                    
+                    Text("1k+ \nAppointm...")
+                        .foregroundColor(SwiftUI.Color.blue)
+                        .font(.system(size:16))
+                        .fontWeight(SwiftUI.Font.Weight.semibold)
+                        .position(x:250,y:15)
                 }
                 
                 Spacer()
                 ZStack{
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(Color.mint)
+                        .fill(Color.white)
                                    .frame(width: 127, height: 130)
                                    .position(x:400,y:15)
+                                   .shadow(color:.gray.opacity(0.2) ,radius: 20)
+                    
+                    Text("5+ \nYears of")
+                        .foregroundColor(SwiftUI.Color.blue)
+                        .font(.system(size:16))
+                        .fontWeight(SwiftUI.Font.Weight.semibold)
+                        .position(x:395,y:15)
                 }
+                
+                Spacer()
+                
+                Text("History")
+                    .font(.system(size:22))
+                    .fontWeight(SwiftUI.Font.Weight.semibold)
+                    .position(x:80,y:140)
+                
+                
+                
+                
+                Button(action: {
+                           
+                       }) {
+                           Text("Book an appointment")
+                               
+                               .padding()
+                               .font(.system(size:22))
+                               .fontWeight(SwiftUI.Font.Weight.semibold)
+                               .foregroundColor(SwiftUI.Color.white)
+                               .frame(width:348, height:60)
+                               .background(SwiftUI.Color.blue)
+                               .cornerRadius(10)
+                               .position(x:220,y:220)
+                               
+                              
+                       }
+                       
                 
             }
             
