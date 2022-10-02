@@ -46,9 +46,11 @@ struct ContentView: View {
                         Text("Next")
                         
                             .padding()
+                            .frame(width:348, height:60)
                             .font(.system(size: 22))
                             .foregroundColor(.white)
                             .background(.blue)
+                            .cornerRadius(10)
                             .position(x:215,y:800)
                             .cornerRadius(20)
                             .fontWeight(SwiftUI.Font.Weight.semibold)
