@@ -191,6 +191,8 @@ struct NewPage:View{
 
                 }
             }
+            
+            //images of 2 doctors
             NavigationLink(destination:DoctorDetails()){
                 Image("doctor1")
                     .resizable()
@@ -203,6 +205,8 @@ struct NewPage:View{
                 .frame(width:80, height:140)
                 .position(x:390, y:460)
             
+            
+                //begining of the most popular cards
             VStack{
                 Text("Most popular")
                     .foregroundColor(SwiftUI.Color.black)
@@ -282,6 +286,8 @@ struct NewPage:View{
                 
             }
             HStack{
+                
+                //implementation of bottom navigation bar
                 HStack{
                     ForEach(0..<4, id:\.self){
                         number in
@@ -290,7 +296,7 @@ struct NewPage:View{
                             
                         }, label:{
                             Image(systemName: icons[number])
-                                .font(.system(size:22))
+                                .font(.system(size:22)) //import icons from SF Symbols
                                 
 
                         })
@@ -345,7 +351,7 @@ struct DoctorDetails:View{
             
         }
         
-        //texts
+        //main head (doctor details)
         VStack{
             Text("Dr. Eric San")
                 .position(x:270, y:-210)
@@ -480,9 +486,11 @@ struct DoctorDetails:View{
                     .fontWeight(SwiftUI.Font.Weight.semibold)
                     .position(x:80,y:140)
                 
+                //histoty of the doctor need to be added
                 
                 
                 
+                //book an appointment button implementation
                 Button(action: {
                            
                        }) {
