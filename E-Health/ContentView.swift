@@ -534,3 +534,5 @@ struct Previews_ContentView_Previews: PreviewProvider {
         DoctorDetails()
     }
 }
+
+//end
