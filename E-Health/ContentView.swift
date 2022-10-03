@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
+        //starting point of the first screen
         NavigationView{
             ZStack {
+                //screen background
                 LinearGradient(gradient: Gradient(colors: [Color.blue , Color.white]), startPoint: .zero, endPoint:.bottomTrailing)
                            .edgesIgnoringSafeArea(.all)
                 
@@ -18,7 +21,7 @@ struct ContentView: View {
                     .position(x:205,y:320)
                 
                 ZStack{
-                    
+                    //white card and text
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                                    .fill(.white)
                                    .frame(width: 430, height: 420)
@@ -41,7 +44,7 @@ struct ContentView: View {
                         .padding(30)
                                
             
-                    
+                    //navigation button
                     NavigationLink(destination: NewPage()) {
                         Text("Next")
                         
@@ -87,13 +90,13 @@ struct NewPage:View{
         
         ZStack{
         
-            Image("blur3")
+            Image("blur3") //bacground image
                
                 .position(x:215, y:375)
                
 
             
-            HStack{
+            HStack{ //top horizontal bar
                 Image("Profile")
                     .resizable()
                     .frame(width:50, height:50)
@@ -128,6 +131,7 @@ struct NewPage:View{
             }
             VStack{
                 //yellow card text details iwth images
+                //top rated doctors
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .fill(Color.yellow)
                                .frame(width: 250, height: 321)
